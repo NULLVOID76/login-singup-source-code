@@ -13,7 +13,7 @@ export function SignUp() {
           <p className="mt-2 text-base text-gray-600">
             Already have an account?{' '}
             <a
-              href="/signin"
+              href="#/signin"
               title=""
               className="font-medium text-black transition-all duration-200 hover:underline"
             >

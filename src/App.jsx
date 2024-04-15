@@ -2,16 +2,19 @@ import { useState, useEffect } from "react";
 import { Home, SignIn, SignUp, Admin,LoggedIn } from "./components";
 import {
   Route,
+  HashRouter,
   RouterProvider,
   createBrowserRouter,
+  createHashRouter,
   createRoutesFromElements,
+  BrowserRouter,
 } from "react-router-dom";
 import { UserProvider } from "./context/userContext";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <>
-      <Route path="" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="signin" element={<SignIn />} />
       <Route path="signup" element={<SignUp />} />
       <Route path="admin" element={<Admin />} />
@@ -38,12 +41,12 @@ function App() {
     setStatus(false);    
   };
 
-  useEffect(()=>{
-  //   if(status)
-  //   console.log("loggedIN");
-  // else
-  // console.log("not logged in");
-  },[status])
+  // useEffect(()=>{
+  // //   if(status)
+  // //   console.log("loggedIN");
+  // // else
+  // // console.log("not logged in");
+  // },[status])
  
     useEffect(() => {
       const userLocal = JSON.parse(localStorage.getItem("users"));
